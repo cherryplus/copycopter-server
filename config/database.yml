@@ -1,8 +1,24 @@
-development: &default
-  adapter: postgresql
-  database: copycopter_development
-  min_messages: WARNING
-
-test: &test
-  <<: *default
-  database: copycopter_test
+development:
+    adapter: sqlite3
+    database: db/development.sqlite3
+    pool: 5
+    timeout: 5000
+    
+    # adapter: mysql2
+    # encoding: utf8
+    # # reconnect: false
+    # database: singer_site
+    # pool: 5
+    # username: thiagonego
+    # password: sampaio
+    # host: 127.0.0.1  
+    
+production:
+    adapter: mysql2
+    encoding: utf8
+    # reconnect: false
+    database: singer_site
+    pool: 5
+    username: thiagonego
+    password: sampaio
+    host: 127.0.0.1
